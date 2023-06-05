@@ -51,5 +51,101 @@ public class Interface {
 		}
 			return alternativa;
 	}
+	
+	public String nomeContato() {
+		boolean status = true;
+		String nome = null;
+		while(status) {
+			try {
+				System.out.println();
+				nome = scan.nextLine(); 
+				
+			}catch(Exception e) {
+				System.out.println("Erro: " + e);
+			}
+		}
+		return nome;
+	}
+	
+	public int idadeContato() {
+		boolean status = true;
+		int idade = 0;
+		while(status) {
+			try {
+				System.out.println();
+				idade = scan.nextInt(); 
+				status = false;
+			}catch(Exception e) {
+				System.out.println("Erro: " + e);
+			}
+		}
+		return idade;
+	}
+	
+	public String enderecoContato() {
+		boolean status = true;
+		String endereco = null;
+		while(status) {
+			try {
+				System.out.println();
+				endereco = scan.nextLine(); 
+				status = false;
+			}catch(Exception e) {
+				System.out.println("Erro: " + e);
+			}
+		}
+		return endereco;
+	}
+	
+	public String telefoneContato() {
+		boolean status = true;
+		String telefone = null;
+		while(status) {
+			try {
+				System.out.println();
+				telefone = scan.nextLine(); 
+				status = false;
+			}catch(Exception e) {
+				System.out.println("Erro: " + e);
+			}
+		}
+		return telefone;
+	}
+	
+	public String emailContato() {
+		boolean status = true;
+		String email = null;
+		while(status) {
+			try {
+				System.out.println();
+				email = scan.nextLine(); 
+				status = false;
+			}catch(Exception e) {
+				System.out.println("Erro: " + e);
+			}
+		}
+		return email;
+	}
+	
+	public Contato cadastraContato() {
+		
+		String nome;
+		int idade;
+		String endereco;
+		String telefone;
+		String email;
+		
+		nome = nomeContato();
+		idade = idadeContato();
+		endereco = enderecoContato();
+		telefone = telefoneContato();
+		email = emailContato();
+		
+		
+		Contato conte = new Contato(nome,idade,endereco,telefone,email);
+		
+		return conte;
+		
+	}
 
 }

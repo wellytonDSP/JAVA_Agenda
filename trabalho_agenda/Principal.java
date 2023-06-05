@@ -10,6 +10,12 @@ public class Principal {
 		if (alter == 1) {
 			
 		}
+		
+		if (alter == 2) {
+			Contato conta = inter.cadastraContato();
+			
+			
+		}
 	}
 }
 
