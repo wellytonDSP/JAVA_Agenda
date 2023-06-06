@@ -54,17 +54,17 @@ public class Interface {
 	
 	public String nomeContato() {
 		boolean status = true;
-		String nome = null;
 		while(status) {
 			try {
-				System.out.println();
-				nome = scan.nextLine(); 
-				
+				System.out.println("Digite o nome: ");
+				String nome = scan.nextLine(); 
+				status = false;
+				return nome;
 			}catch(Exception e) {
 				System.out.println("Erro: " + e);
 			}
 		}
-		return nome;
+		return null;
 	}
 	
 	public int idadeContato() {
@@ -72,7 +72,7 @@ public class Interface {
 		int idade = 0;
 		while(status) {
 			try {
-				System.out.println();
+				System.out.println("Digite a idade: ");
 				idade = scan.nextInt(); 
 				status = false;
 			}catch(Exception e) {
@@ -87,7 +87,7 @@ public class Interface {
 		String endereco = null;
 		while(status) {
 			try {
-				System.out.println();
+				System.out.println("Digite o endereço:  ");
 				endereco = scan.nextLine(); 
 				status = false;
 			}catch(Exception e) {
@@ -102,7 +102,7 @@ public class Interface {
 		String telefone = null;
 		while(status) {
 			try {
-				System.out.println();
+				System.out.println("Digite o telefone: ");
 				telefone = scan.nextLine(); 
 				status = false;
 			}catch(Exception e) {
@@ -117,7 +117,7 @@ public class Interface {
 		String email = null;
 		while(status) {
 			try {
-				System.out.println();
+				System.out.println("Digite o email: ");
 				email = scan.nextLine(); 
 				status = false;
 			}catch(Exception e) {
@@ -128,7 +128,7 @@ public class Interface {
 	}
 	
 	public Contato cadastraContato() {
-		
+		scan.nextLine();
 		String nome;
 		int idade;
 		String endereco;
@@ -136,11 +136,12 @@ public class Interface {
 		String email;
 		
 		nome = nomeContato();
+		
 		idade = idadeContato();
+		scan.nextLine();
 		endereco = enderecoContato();
 		telefone = telefoneContato();
 		email = emailContato();
-		
 		
 		Contato conte = new Contato(nome,idade,endereco,telefone,email);
 		
